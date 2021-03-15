@@ -95,7 +95,8 @@ bool is_prime_recursion(unsigned p)
 
 // primary template
 // recursive clause of recursive function
-template<unsigned p, unsigned d> struct st_is_prime_recu
+template<unsigned p, unsigned d>
+struct st_is_prime_recu
 {
     /*
      * (p%d != 0) && _is_prime_recu(p, --d);
@@ -108,7 +109,8 @@ template<unsigned p, unsigned d> struct st_is_prime_recu
 };
 
 // escape clause to specialization
-template<unsigned p> struct st_is_prime_recu<p, 2>
+template<unsigned p>
+struct st_is_prime_recu<p, 2>
 {
     static const bool value = (p % 2 != 0);
 };
@@ -116,27 +118,32 @@ template<unsigned p> struct st_is_prime_recu<p, 2>
 // primary template
 // when we translate recursive function
 // to template class, recursive clause becomes primary template
-template<unsigned p> struct st_is_prime
+template<unsigned p>
+struct st_is_prime
 {
     static const bool value = st_is_prime_recu<p, p / 2>::value;
 };
 
-template<> struct st_is_prime<3>
+template<>
+struct st_is_prime<3>
 {
     static const bool value = true;
 };
 
-template<> struct st_is_prime<2>
+template<>
+struct st_is_prime<2>
 {
     static const bool value = true;
 };
 
-template<> struct st_is_prime<1>
+template<>
+struct st_is_prime<1>
 {
     static const bool value = true;
 };
 
-template<> struct st_is_prime<0>
+template<>
+struct st_is_prime<0>
 {
     static const bool value = false;
 };

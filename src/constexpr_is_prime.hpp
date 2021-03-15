@@ -95,7 +95,8 @@ constexpr bool is_prime_recursion(unsigned p)
 
 // primary template
 // recursive clause of recursive function
-template<unsigned p, unsigned d> struct st_is_prime_recu
+template<unsigned p, unsigned d>
+struct st_is_prime_recu
 {
     /*
      * (p%d != 0) && _is_prime_recu(p, --d);
@@ -108,7 +109,8 @@ template<unsigned p, unsigned d> struct st_is_prime_recu
 };
 
 // escape clause to specialization
-template<unsigned p> struct st_is_prime_recu<p, 2>
+template<unsigned p>
+struct st_is_prime_recu<p, 2>
 {
     static const bool value = (p % 2 != 0);
 };
@@ -116,7 +118,8 @@ template<unsigned p> struct st_is_prime_recu<p, 2>
 // primary template
 // when we translate recursive function
 // to template class, recursive clause becomes primary template
-template<unsigned P> struct st_is_prime
+template<unsigned P>
+struct st_is_prime
 {
     static const bool value = is_prime_loop(P);
 };
@@ -147,7 +150,8 @@ constexpr void test_is_prime_recursion(unsigned limit)
 // limit and p are non-type template parameter
 // we cannot change the values of non-type template parameters
 // This compile-time function is equivalent ot loop...
-template<typename std::size_t LIMIT, unsigned P> constexpr void test_constexpr_prime()
+template<typename std::size_t LIMIT, unsigned P>
+constexpr void test_constexpr_prime()
 {
     // if constexpr(constant expression or LiteralType)
     // is introduced in C++17 standard

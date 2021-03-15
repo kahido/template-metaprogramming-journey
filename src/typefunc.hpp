@@ -41,7 +41,7 @@ struct st_same_type
 };
 
 // partial specialization
-template<typename T> // "partial" means we still need template parameter
+template<typename T>// "partial" means we still need template parameter
 struct st_same_type<T, T>
 {
     static const bool value = true;
@@ -76,6 +76,3 @@ struct st_enable_true<true, RType>
 
 template<bool TEST, typename RType>
 using enable_true_t = typename st_enable_true<TEST, RType>::type;
-
-
-

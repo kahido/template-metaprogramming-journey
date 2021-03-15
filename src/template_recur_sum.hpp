@@ -26,7 +26,7 @@ unsigned sum_recursion(unsigned n)
 
 // primary template class
 // recursive clause
-template<unsigned n> // non-type template parameter
+template<unsigned n>// non-type template parameter
 struct st_sum// n = 2, 3, 4, ...
 {
     static const unsigned value = n + st_sum<n - 1>::value;
@@ -34,7 +34,8 @@ struct st_sum// n = 2, 3, 4, ...
 
 // full specialization of template class
 // escape clause
-template<> struct st_sum<1>// n = 1
+template<>
+struct st_sum<1>// n = 1
 {
     static const unsigned value = 1;
 };
