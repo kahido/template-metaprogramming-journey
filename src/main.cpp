@@ -1,6 +1,5 @@
 #include <iostream>
-
-#include <type_traits>
+#include <string>
 // #include <utility>
 
 // #include "sfinae_modulo.hpp"
@@ -10,6 +9,7 @@
 // #include "compile_time_loop.hpp"
 // #include "generic_lambda_sfinae_1.hpp"
 // #include "generic_lambda_sfinae_2.hpp"
+#include "type_name.hpp"
 
 /*
     #include <functional>
@@ -20,16 +20,19 @@
 
 int main()
 {
-    // sfinae_modulo();
-    // non_type_template_recursion();
+    int a = 0;
 
-    // test_is_prime(magic_prime);
-    // test_is_prime_recursion(magic_prime);
-    // test_st_is_prime();
-    // test_constexpr_prime<magic_prime, 1>();
-    // test_compile_time_loop();
-    // test_lambda_sfinae();
-    // test_lambda_sfinae_second(); // NOT COMPILE !!!!!!
+    std::cout << kk_GetTypeName<int>() << std::endl;
+
+    // decltype(expression)
+    // returns declared type of a expression
+    // std::cout << type_to_string<decltype(a)>() << std::endl;
+    std::cout << kk_GetTypeCategory(a) << std::endl;
+
+    // decltype((expression))
+    // returns value category of a expression
+    // std::cout << type_to_string<decltype((a))>() << std::endl;
+    std::cout << kk_GetValueCategory(a) << std::endl;
 
     return 1;
 }
