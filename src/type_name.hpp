@@ -54,4 +54,21 @@ constexpr auto kk_GetValueCategory(T type_instance)
     return kahido::type_to_string<decltype((type_instance))>();
 }
 
+
+/*
+    int a = 0;
+
+    std::cout << kk_GetTypeName<int>() << std::endl;
+
+    // decltype(expression)
+    // returns declared type of a expression
+    // std::cout << type_to_string<decltype(a)>() << std::endl;
+    std::cout << kk_GetTypeCategory(a) << std::endl;
+
+    // decltype((expression))
+    // returns value category of a expression
+    // std::cout << type_to_string<decltype((a))>() << std::endl;
+    std::cout << kk_GetValueCategory(a) << std::endl;
+*/
+
 #endif // _KAHIDO_TYPE_NAME_HPP
