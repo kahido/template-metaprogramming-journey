@@ -1,5 +1,5 @@
 #include <iostream>
-#include "typefunc.hpp"
+#include <type/typefunc.hpp>
 
 /*
  *

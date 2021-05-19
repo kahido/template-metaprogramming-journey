@@ -30,45 +30,55 @@ std::string type_to_string()
 #endif
 }
 
-} // namespace kahido
+}// namespace kahido
 
-// #define kk_GetTypeName(type_name) type_to_string<type_name>()
-// #define kk_GetTypeCategory(type_instance) type_to_string<decltype(type_instance)>();
-// #define kk_GetValueCategory(type_instance) type_to_string<decltype((type_instance))>();
-
+/*
+ * @brief
+ * #define kk_GetTypeName(type_name) type_to_string<type_name>()
+ *
+ * std::cout << kk_GetTypeName<int>() << std::endl;
+ *
+ */
 template<typename T>
 constexpr auto kk_GetTypeName()
 {
     return kahido::type_to_string<T>();
 }
 
+/*
+ * @brief
+ * #define kk_GetTypeCategory(type_instance) type_to_string<decltype(type_instance)>();
+ *
+ * int a = 0;
+ *
+ * decltype(expression)
+ * returns declared type of a expression
+ * std::cout << type_to_string<decltype(a)>() << std::endl;
+ * std::cout << kk_GetTypeCategory(a) << std::endl;
+ *
+ */
 template<typename T>
 constexpr auto kk_GetTypeCategory(T type_instance)
 {
     return kahido::type_to_string<decltype(type_instance)>();
 }
 
+/*
+ * @brief
+ * #define kk_GetValueCategory(type_instance) type_to_string<decltype((type_instance))>();
+ *
+ * int a = 0;
+ *
+ * decltype((expression))
+ * returns value category of a expression
+ * std::cout << type_to_string<decltype((a))>() << std::endl;
+ * std::cout << kk_GetValueCategory(a) << std::endl;
+ *
+ */
 template<typename T>
 constexpr auto kk_GetValueCategory(T type_instance)
 {
     return kahido::type_to_string<decltype((type_instance))>();
 }
 
-
-/*
-    int a = 0;
-
-    std::cout << kk_GetTypeName<int>() << std::endl;
-
-    // decltype(expression)
-    // returns declared type of a expression
-    // std::cout << type_to_string<decltype(a)>() << std::endl;
-    std::cout << kk_GetTypeCategory(a) << std::endl;
-
-    // decltype((expression))
-    // returns value category of a expression
-    // std::cout << type_to_string<decltype((a))>() << std::endl;
-    std::cout << kk_GetValueCategory(a) << std::endl;
-*/
-
-#endif // _KAHIDO_TYPE_NAME_HPP
+#endif// _KAHIDO_TYPE_NAME_HPP

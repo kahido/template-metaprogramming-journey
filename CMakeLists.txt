@@ -62,6 +62,7 @@ if(ENABLE_TESTING)
   add_subdirectory(test)
 endif()
 
+include_directories(include)
 add_subdirectory(src)
 
 option(ENABLE_UNITY "Enable Unity builds of projects" OFF)
