@@ -20,7 +20,7 @@ set(ENABLE_DEVELOPER_MODE
 # Change this to false if you want to disable warnings_as_errors in developer mode
 set(OPT_WARNINGS_AS_ERRORS_DEVELOPER_DEFAULT TRUE)
 
-set(PROJECT_NAME "simple-project")
+set(PROJECT_NAME "template-metaprogramming-journey")
 
 # Set the project name and language
 project(
@@ -64,9 +64,7 @@ if(ENABLE_PCH)
     project_options
     INTERFACE
     <vector>
-    <string>
-    <map>
-    <utility>)
+    <string>)
 endif()
 
 include_directories(include)
@@ -74,6 +72,6 @@ add_subdirectory(source)
 
 if(ENABLE_TESTING)
   enable_testing()
-  message("Building Tests. Be sure to check out test/constexpr_tests for constexpr testing")
+  message("Building Tests")
   add_subdirectory(test)
 endif()

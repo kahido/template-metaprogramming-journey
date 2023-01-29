@@ -1,4 +1,4 @@
-# Simple C++ Project Template
+# Template Metaprogramming Journey
 
 ## About
 
@@ -9,14 +9,6 @@ By default (collectively known as `ENABLE_DEVELOPER_MODE`)
  * Address Sanitizer and Undefined Behavior Sanitizer enabled where possible
  * Warnings as errors
  * clang-tidy and cppcheck static analysis
-
-## Getting Started
-
-### Use the Github template
-
-First, click the green `Use this template` button near the top of this page. This will take you to Github's [Generate Repository](https://github.com/kahido/simple-project-structure/generate) page. Fill in a repository name and short description, and click 'Create repository from template'. This will allow you to create a new repository in your Github account, prepopulated with the contents of this project.
-
-After creating the project please wait until the cleanup workflow has finished setting up your project and commited the changes.
 
 ## Build Instructions
 
@@ -30,7 +22,7 @@ CMake will detect which compiler was used to build each of the Conan targets. If
 
 ### (2) Configure your build
 
-To configure the project, you could use `cmake`, or `ccmake` or `cmake-gui`. Each of them are explained in the following:
+To configure the project, you could use `cmake` or `ccmake`. Each of them are explained in the following:
 
 #### (2.a) Configuring via cmake:
 With Cmake directly:
