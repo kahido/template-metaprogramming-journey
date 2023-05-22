@@ -1,4 +1,4 @@
-set(source_files 00_basic_function_templates.cpp)
+set(source_files 00_basic_function_templates.cpp 01_basic_class_templates.cpp)
 
 # Loop through each source file
 foreach(source_file IN LISTS source_files)

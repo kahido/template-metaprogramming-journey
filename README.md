@@ -2,13 +2,8 @@
 
 ## About
 
-This is a C++ GitHub template for getting up and running projects with C++ quickly. It is based on originaly designed and published by leftcus [C++ Best Practices GitHub template](https://github.com/cpp-best-practices/gui_starter_template).
-
-By default (collectively known as `ENABLE_DEVELOPER_MODE`)
-
- * Address Sanitizer and Undefined Behavior Sanitizer enabled where possible
- * Warnings as errors
- * clang-tidy and cppcheck static analysis
+C++ Template Metaprogramming self-learning.
+From Basic topics to more Advanced. Development of some cool tools and frameworks using Template Metaprogramming technics.
 
 ## Build Instructions
 
